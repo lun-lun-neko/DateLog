@@ -21,6 +21,18 @@ DateLog는 커플이 데이트 추억을 지도 기반으로 기록하는 모바
 - [데이터 모델 초안](docs/data-model.md)
 - [API 초안](docs/api-draft.md)
 
+## 디자인 프로토타입
+
+Figma에서 export한 MVP 앱 초안은 `design-prototype/`에 거의 원형 그대로 보관합니다.
+
+```bash
+cd design-prototype
+npm install
+npm run dev
+```
+
+이 프로토타입은 Vite/React DOM 기반입니다. 실제 모바일 앱 구현은 `frontend/`의 Expo 앱에서 진행합니다.
+
 ## 프론트엔드
 
 Expo 앱은 `frontend/`에 있습니다.
@@ -36,4 +48,3 @@ npm run start
 - React Native 0.81
 - React 19
 - TypeScript
-

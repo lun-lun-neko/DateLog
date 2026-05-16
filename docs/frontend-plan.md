@@ -16,6 +16,9 @@
 ## 3. 현재 앱 구조
 
 ```text
+design-prototype/
+  Figma export 기반 Vite/React DOM 프로토타입
+
 frontend/
   App.tsx
   src/
@@ -38,6 +41,7 @@ frontend/
 
 ## 5. 현재 구현 상태
 
+- `design-prototype/`에 Figma MVP 초안 export를 거의 원형 그대로 흡수했습니다.
 - `frontend/` 아래에 Expo TypeScript 프로젝트를 생성했습니다.
 - MVP 화면 뼈대를 구현했습니다.
 - 화면 전환은 현재 `App.tsx`의 로컬 React state로 처리합니다.
@@ -64,4 +68,3 @@ frontend/
 - 데이트 기록 상세 응답 형태.
 - 사진 업로드 방식: 백엔드 multipart 업로드 또는 signed upload URL.
 - 경로 좌표 payload 크기 제한.
-
