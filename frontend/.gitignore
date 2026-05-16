@@ -40,3 +40,6 @@ expo-web.*.log
 # generated native folders
 /ios
 /android
+
+# extra files
+extra file/
