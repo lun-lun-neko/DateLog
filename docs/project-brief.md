@@ -1,65 +1,65 @@
-# DateLog Project Brief
+# DateLog 프로젝트 기획서
 
-## 1. Service Overview
+## 1. 서비스 개요
 
-DateLog is a mobile app for couples to record dating memories around a map.
+DateLog는 커플이 데이트 추억을 지도 중심으로 기록하는 모바일 앱입니다.
 
-The core experience is:
+핵심 경험은 다음과 같습니다.
 
-> A couple draws a date route on a map, saves visited places, photos, and notes on that route, and can look back on the record later.
+> 커플이 데이트 경로를 지도 위에 그리고, 방문한 장소·사진·메모를 경로 위에 저장한 뒤 나중에 다시 볼 수 있다.
 
-## 2. Target Users
+## 2. 핵심 사용자
 
-- Couples who want to preserve date memories more meaningfully than a photo album.
-- Couples who often visit cafes, restaurants, parks, exhibitions, or travel spots together.
-- Users who want to remember where they went, what they did, and how they felt on a date.
+- 사진첩보다 더 의미 있게 데이트 추억을 남기고 싶은 커플.
+- 카페, 식당, 공원, 전시, 여행지 등을 함께 자주 방문하는 커플.
+- 어디를 갔고, 무엇을 했고, 어떤 감정이었는지 함께 기억하고 싶은 사용자.
 
-## 3. Core Value
+## 3. 핵심 가치
 
-Photo apps store images, but they do not clearly show the story of a date.
+일반 사진 앱은 이미지를 저장하지만, 데이트 하루의 흐름을 보여주지는 못합니다.
 
-DateLog should preserve:
+DateLog는 다음을 함께 보존하는 것을 목표로 합니다.
 
-- Where the couple moved.
-- Which places they visited.
-- What photos and notes belong to each place.
-- How the couple can revisit the full date later.
+- 커플이 이동한 경로.
+- 방문한 장소.
+- 장소별 사진과 메모.
+- 하루 데이트를 다시 볼 수 있는 기록 구조.
 
-## 4. MVP Objective
+## 4. MVP 목표
 
-The first version should focus only on the core memory-recording loop:
+첫 버전은 추억 기록의 핵심 루프에만 집중합니다.
 
-1. Sign in.
-2. Connect with partner.
-3. Create a date record.
-4. Draw or save a route on a map.
-5. Add places, photos, and notes.
-6. View previous date records.
+1. 로그인한다.
+2. 연인과 커플 공간을 연결한다.
+3. 데이트 기록을 만든다.
+4. 지도에서 경로를 그리거나 저장한다.
+5. 장소, 사진, 메모를 추가한다.
+6. 이전 데이트 기록을 다시 본다.
 
-## 5. Out of Scope for MVP
+## 5. MVP 제외 범위
 
-These are good expansion features, but should wait until the core loop is solid:
+아래 기능들은 좋은 확장 기능이지만, 핵심 기록 루프가 안정된 뒤 추가합니다.
 
-- Couple mini characters.
-- Character room decoration.
-- Bucket list places.
-- Daily couple question.
-- Date impression prompts.
-- Attendance.
-- Couple ranking.
-- D-day calculator.
-- Theme color customization.
+- 커플 미니 캐릭터.
+- 캐릭터 방꾸미기.
+- 버킷리스트 장소.
+- 오늘의 커플 질문.
+- 오늘의 데이트 소감.
+- 출석 기능.
+- 커플 랭킹.
+- 디데이 계산기.
+- 앱 테마 색상 변경.
 
-## 6. Recommended Stack
+## 6. 추천 기술 스택
 
-Initial recommended stack:
+초기 추천 스택은 다음과 같습니다.
 
-- Frontend: React Native or Flutter.
-- Backend: FastAPI.
-- Database: Supabase PostgreSQL.
-- Storage: Supabase Storage or S3.
-- Login: Kakao Login API.
-- Map: Kakao Map API or Naver Map API.
+- 프론트엔드: React Native 또는 Flutter.
+- 백엔드: FastAPI.
+- 데이터베이스: Supabase PostgreSQL.
+- 스토리지: Supabase Storage 또는 S3.
+- 로그인: Kakao Login API.
+- 지도: Kakao Map API 또는 Naver Map API.
 
-For a Korea-focused consumer app, Kakao Login and Kakao Map are the natural first candidates.
+한국 사용자를 대상으로 한 커플 앱이라면 카카오 로그인과 카카오맵 조합이 가장 자연스러운 후보입니다.
 

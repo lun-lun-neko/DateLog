@@ -1,19 +1,19 @@
-# Frontend Plan
+# 프론트엔드 계획
 
-## 1. Ownership
+## 1. 담당 범위
 
-This workspace is for frontend development only.
+이 작업공간은 프론트엔드 개발 전용입니다.
 
-Backend work is owned by a teammate. Frontend should keep API expectations documented in `docs/api-draft.md` and avoid implementing backend code in this repository.
+백엔드는 동료가 담당합니다. 프론트엔드는 `docs/api-draft.md`에 API 기대사항을 계약 초안으로 남기고, 이 저장소에는 백엔드 코드를 구현하지 않습니다.
 
-## 2. Current Stack
+## 2. 현재 스택
 
 - Expo SDK 54.
 - React Native 0.81.
 - React 19.
 - TypeScript.
 
-## 3. Current App Structure
+## 3. 현재 앱 구조
 
 ```text
 frontend/
@@ -26,41 +26,42 @@ frontend/
     types/
 ```
 
-## 4. MVP Frontend Screens
+## 4. MVP 프론트 화면
 
-- Login.
-- Couple connect.
-- Home.
-- New date record.
-- Date history.
-- Date detail.
-- Settings.
+- 로그인.
+- 커플 연결.
+- 홈.
+- 새 데이트 기록.
+- 데이트 기록 목록.
+- 데이트 기록 상세.
+- 설정.
 
-## 5. Current Implementation State
+## 5. 현재 구현 상태
 
-- Expo TypeScript project is created under `frontend/`.
-- MVP screen skeletons are implemented.
-- Screen transitions currently use local React state in `App.tsx`.
-- Mock date records are used before backend integration.
-- Map is represented by a placeholder component until map SDK integration.
+- `frontend/` 아래에 Expo TypeScript 프로젝트를 생성했습니다.
+- MVP 화면 뼈대를 구현했습니다.
+- 화면 전환은 현재 `App.tsx`의 로컬 React state로 처리합니다.
+- 백엔드 연동 전까지 mock 데이트 기록 데이터를 사용합니다.
+- 지도는 지도 SDK 연동 전까지 임시 컴포넌트로 표현합니다.
 
-## 6. Next Frontend Tasks
+## 6. 다음 프론트엔드 작업
 
-1. Add production navigation, likely Expo Router or React Navigation.
-2. Decide Kakao Map vs Naver Map frontend integration path.
-3. Add API client layer based on backend contract.
-4. Add auth state handling for Kakao login.
-5. Replace mock date records with API-backed data.
-6. Add image picker and upload flow.
-7. Add route recording using location permission and GPS points.
+1. 실제 운영용 내비게이션 도입. 후보는 Expo Router 또는 React Navigation.
+2. 카카오맵과 네이버맵 중 프론트 연동 방식을 결정.
+3. 백엔드 계약에 맞춘 API 클라이언트 레이어 추가.
+4. 카카오 로그인 인증 상태 처리.
+5. mock 데이트 기록을 API 데이터로 교체.
+6. 이미지 선택 및 업로드 흐름 추가.
+7. 위치 권한과 GPS 좌표를 이용한 경로 기록 추가.
 
-## 7. Backend Contract Notes
+## 7. 백엔드와 먼저 맞춰야 할 내용
 
-Frontend needs these backend decisions early:
+프론트엔드는 아래 결정을 초기에 백엔드와 맞춰야 합니다.
 
-- App session token format and refresh behavior.
-- Kakao login exchange endpoint.
-- Couple invite code lifecycle.
-- Date record detail response shape.
-- Photo upload strategy: multipart through backend or signed upload URL.
-- Route point payload size limit.
+- 앱 세션 토큰 형식과 refresh 방식.
+- 카카오 로그인 교환 API.
+- 커플 초대 코드의 생성/만료 정책.
+- 데이트 기록 상세 응답 형태.
+- 사진 업로드 방식: 백엔드 multipart 업로드 또는 signed upload URL.
+- 경로 좌표 payload 크기 제한.
+

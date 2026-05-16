@@ -1,124 +1,124 @@
-# Screen Map
+# 화면 구성
 
-## 1. MVP Navigation
+## 1. MVP 내비게이션
 
 ```text
-Launch
-  -> Login
-  -> Onboarding / Couple Connect
-  -> Home
-      -> Create Date Record
-      -> Date History
-      -> Date Detail
-      -> Settings
+앱 실행
+  -> 로그인
+  -> 온보딩 / 커플 연결
+  -> 홈
+      -> 데이트 기록 생성
+      -> 데이트 기록 목록
+      -> 데이트 기록 상세
+      -> 설정
 ```
 
-## 2. Screens
+## 2. 화면 목록
 
-### Login
+### 로그인
 
-Purpose: authenticate users through Kakao.
+목적: 카카오 로그인을 통해 사용자를 인증합니다.
 
-Main elements:
+주요 요소:
 
-- App name.
-- Kakao login button.
-- Basic terms/privacy links.
+- 앱 이름.
+- 카카오 로그인 버튼.
+- 약관/개인정보 처리방침 링크.
 
-### Couple Connect
+### 커플 연결
 
-Purpose: connect two users into one couple space.
+목적: 두 사용자를 하나의 커플 공간으로 연결합니다.
 
-Main elements:
+주요 요소:
 
-- My invite code.
-- Code copy/share action.
-- Partner code input.
-- Connect button.
-- Connected partner state.
+- 내 초대 코드.
+- 코드 복사/공유 액션.
+- 상대방 코드 입력.
+- 연결 버튼.
+- 연결된 상대방 상태.
 
-### Home
+### 홈
 
-Purpose: show the couple's current state and primary actions.
+목적: 커플의 현재 상태와 주요 액션을 보여줍니다.
 
-Main elements:
+주요 요소:
 
-- Couple profile summary.
-- Latest date record preview.
-- Create date button.
-- Date history entry.
-- Optional D-day area later.
+- 커플 프로필 요약.
+- 최근 데이트 기록 미리보기.
+- 새 데이트 기록 버튼.
+- 데이트 기록 목록 진입.
+- 추후 디데이 영역.
 
-### Create Date Record
+### 데이트 기록 생성
 
-Purpose: create one date record and capture its route.
+목적: 하나의 데이트 기록을 만들고 경로를 저장합니다.
 
-Main elements:
+주요 요소:
 
-- Date title input.
-- Date picker.
-- Map.
-- Start/stop route recording action.
-- Add place action.
-- Save record action.
+- 데이트 제목 입력.
+- 날짜 선택.
+- 지도.
+- 경로 기록 시작/종료 액션.
+- 장소 추가 액션.
+- 저장 액션.
 
-### Add Place
+### 장소 추가
 
-Purpose: attach a visited place to the current date.
+목적: 현재 데이트에 방문 장소를 추가합니다.
 
-Main elements:
+주요 요소:
 
-- Place name.
-- Address or map-selected location.
-- Memo.
-- Photo upload.
-- Visit order.
+- 장소명.
+- 주소 또는 지도에서 선택한 위치.
+- 메모.
+- 사진 업로드.
+- 방문 순서.
 
-### Date History
+### 데이트 기록 목록
 
-Purpose: browse previous records.
+목적: 이전 기록을 확인합니다.
 
-Main elements:
+주요 요소:
 
-- Date-grouped list.
-- Record title.
-- Thumbnail from first photo.
-- Number of places.
-- Created date.
+- 날짜 기준 목록.
+- 기록 제목.
+- 첫 사진 기반 썸네일.
+- 장소 개수.
+- 생성 날짜.
 
-### Date Detail
+### 데이트 기록 상세
 
-Purpose: revisit a full date memory.
+목적: 하루 데이트 기록 전체를 다시 봅니다.
 
-Main elements:
+주요 요소:
 
-- Date title and date.
-- Map with saved route.
-- Place timeline.
-- Photos and notes per place.
-- Edit/delete actions.
+- 데이트 제목과 날짜.
+- 저장된 경로가 표시된 지도.
+- 장소 타임라인.
+- 장소별 사진과 메모.
+- 수정/삭제 액션.
 
-### Settings
+### 설정
 
-Purpose: manage account and couple state.
+목적: 계정과 커플 연결 상태를 관리합니다.
 
-Main elements:
+주요 요소:
 
-- User profile.
-- Partner profile.
-- Logout.
-- Disconnect couple action.
+- 사용자 프로필.
+- 상대방 프로필.
+- 로그아웃.
+- 커플 연결 해제.
 
-## 3. MVP Main Flow
+## 3. MVP 주요 흐름
 
 ```text
-Kakao Login
-  -> Generate or enter couple code
-  -> Home
-  -> Create date record
-  -> Record route on map
-  -> Add place/photo/memo
-  -> Save
-  -> Open from history
+카카오 로그인
+  -> 커플 코드 생성 또는 입력
+  -> 홈
+  -> 데이트 기록 생성
+  -> 지도에서 경로 기록
+  -> 장소/사진/메모 추가
+  -> 저장
+  -> 이전 기록에서 다시 열기
 ```
 

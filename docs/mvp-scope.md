@@ -1,75 +1,75 @@
-# MVP Scope
+# MVP 범위
 
-## 1. MVP Statement
+## 1. MVP 한 문장 정의
 
-DateLog MVP lets a couple record one date on a map, save route-based places with photos and notes, and view the record later.
+DateLog MVP는 커플이 하루 데이트를 지도에 기록하고, 경로 기반 장소에 사진과 메모를 저장한 뒤 나중에 다시 볼 수 있게 합니다.
 
-## 2. Required Features
+## 2. 필수 기능
 
-### Authentication
+### 인증
 
-- Kakao login.
-- User profile creation after first login.
-- Restore access through the linked Kakao account.
+- 카카오 로그인.
+- 최초 로그인 후 사용자 프로필 생성.
+- 카카오 계정 연동을 통한 기록 복구.
 
-### Couple Connection
+### 커플 연결
 
-- Generate a couple invite code.
-- Enter partner's invite code.
-- Create a couple relationship after successful code matching.
-- Show connected partner state.
+- 커플 초대 코드 생성.
+- 상대방 초대 코드 입력.
+- 코드 매칭 성공 시 커플 관계 생성.
+- 연결된 상대방 상태 표시.
 
-### Date Record
+### 데이트 기록
 
-- Create a date record with date and title.
-- Optionally add a short summary.
-- Edit and delete own couple's date records.
+- 날짜와 제목을 입력해 데이트 기록 생성.
+- 짧은 요약 선택 입력.
+- 본인 커플의 데이트 기록 수정/삭제.
 
-### Map Route
+### 지도 경로
 
-- Display map.
-- Record route points while creating a date record.
-- Save route coordinates.
-- Render saved route on detail screen.
+- 지도 표시.
+- 데이트 기록 생성 중 경로 좌표 기록.
+- 경로 좌표 저장.
+- 상세 화면에서 저장된 경로 다시 표시.
 
-### Places
+### 장소
 
-- Add visited place on the route or map.
-- Save place name, address, latitude, longitude, visit order, and memo.
-- Attach photos to a place.
+- 경로 또는 지도 위에 방문 장소 추가.
+- 장소명, 주소, 위도, 경도, 방문 순서, 메모 저장.
+- 장소별 사진 첨부.
 
-### History
+### 이전 기록
 
-- List previous date records by date.
-- Open date detail.
-- Show map route, places, photos, and notes.
+- 이전 데이트 기록을 날짜 기준으로 목록 표시.
+- 데이트 기록 상세 열기.
+- 지도 경로, 장소, 사진, 메모 표시.
 
-## 3. Priority
+## 3. 우선순위
 
-| Priority | Feature | Reason |
+| 우선순위 | 기능 | 이유 |
 | --- | --- | --- |
-| P0 | Kakao login | User identity and backup |
-| P0 | Couple code connection | Core couple app behavior |
-| P0 | Date record creation | Main content unit |
-| P0 | Map route recording | Product differentiator |
-| P0 | Place/photo/note saving | Memory content |
-| P0 | Previous record list/detail | Recording app baseline |
-| P1 | Bucket list | Natural extension from map |
-| P1 | D-day | Common couple app feature |
-| P1 | Daily question | Retention |
-| P1 | Date impression | Emotional record |
-| P2 | Mini character | Larger content system |
-| P2 | Room decoration | Requires items/assets |
-| P2 | Ranking | Needs enough users and scoring rules |
-| P2 | Attendance scoring | Needs reward design |
-| P2 | Theme color | Polish after core value |
+| P0 | 카카오 로그인 | 사용자 식별과 기록 복구 |
+| P0 | 커플 코드 연결 | 커플 앱의 핵심 구조 |
+| P0 | 데이트 기록 생성 | 앱의 주요 콘텐츠 단위 |
+| P0 | 지도 경로 기록 | 서비스 차별점 |
+| P0 | 장소/사진/메모 저장 | 추억 기록의 핵심 |
+| P0 | 이전 기록 목록/상세 | 기록 앱의 기본 기능 |
+| P1 | 버킷리스트 | 지도 기능의 자연스러운 확장 |
+| P1 | 디데이 | 커플 앱 기본 감성 기능 |
+| P1 | 오늘의 질문 | 재방문 유도 |
+| P1 | 데이트 소감 | 감정 기록 강화 |
+| P2 | 미니 캐릭터 | 별도 콘텐츠 시스템 필요 |
+| P2 | 방꾸미기 | 아이템/에셋 구조 필요 |
+| P2 | 커플 랭킹 | 충분한 사용자와 점수 정책 필요 |
+| P2 | 출석 점수화 | 보상 설계 필요 |
+| P2 | 테마 색상 변경 | 핵심 기능 이후의 완성도 작업 |
 
-## 4. MVP Success Criteria
+## 4. MVP 성공 기준
 
-- A new user can sign in with Kakao.
-- Two users can connect as a couple through a code.
-- A connected couple can create a date record.
-- The date record can save route coordinates.
-- At least one place with photo and memo can be saved.
-- The saved record can be opened later from a history list.
+- 신규 사용자가 카카오로 로그인할 수 있다.
+- 두 사용자가 코드로 커플 연결을 할 수 있다.
+- 연결된 커플이 데이트 기록을 만들 수 있다.
+- 데이트 기록에 경로 좌표를 저장할 수 있다.
+- 최소 1개 장소에 사진과 메모를 저장할 수 있다.
+- 저장한 기록을 이전 기록 목록에서 다시 열 수 있다.
 

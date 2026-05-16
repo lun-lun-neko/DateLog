@@ -1,14 +1,14 @@
-# API Draft
+# API 초안
 
-This document assumes a FastAPI backend. Paths and payloads are initial drafts.
+이 문서는 FastAPI 백엔드를 가정한 초기 API 계약 초안입니다. 실제 경로와 payload는 백엔드 구현 과정에서 조정될 수 있습니다.
 
-## 1. Auth
+## 1. 인증
 
 ### POST /auth/kakao
 
-Exchange Kakao login data for an app session.
+카카오 로그인 정보를 앱 세션으로 교환합니다.
 
-Request:
+요청:
 
 ```json
 {
@@ -16,7 +16,7 @@ Request:
 }
 ```
 
-Response:
+응답:
 
 ```json
 {
@@ -29,13 +29,13 @@ Response:
 }
 ```
 
-## 2. Couple
+## 2. 커플
 
 ### POST /couples/invite-code
 
-Create or fetch the current user's invite code.
+현재 사용자의 초대 코드를 생성하거나 기존 코드를 조회합니다.
 
-Response:
+응답:
 
 ```json
 {
@@ -45,9 +45,9 @@ Response:
 
 ### POST /couples/connect
 
-Connect with a partner by invite code.
+초대 코드로 상대방과 커플 연결을 합니다.
 
-Request:
+요청:
 
 ```json
 {
@@ -55,7 +55,7 @@ Request:
 }
 ```
 
-Response:
+응답:
 
 ```json
 {
@@ -69,47 +69,47 @@ Response:
 
 ### GET /couples/me
 
-Return the current couple state.
+현재 사용자의 커플 연결 상태를 반환합니다.
 
-## 3. Date Records
+## 3. 데이트 기록
 
 ### GET /date-records
 
-List previous date records for the current couple.
+현재 커플의 이전 데이트 기록 목록을 반환합니다.
 
 ### POST /date-records
 
-Create a date record.
+데이트 기록을 생성합니다.
 
-Request:
+요청:
 
 ```json
 {
-  "title": "Hongdae date",
+  "title": "홍대 데이트",
   "date": "2026-05-16",
-  "summary": "Cafe, exhibition, and dinner"
+  "summary": "카페, 전시, 저녁"
 }
 ```
 
 ### GET /date-records/{date_record_id}
 
-Return detail with route, places, and photos.
+경로, 장소, 사진을 포함한 데이트 기록 상세를 반환합니다.
 
 ### PATCH /date-records/{date_record_id}
 
-Update title, date, or summary.
+제목, 날짜, 요약을 수정합니다.
 
 ### DELETE /date-records/{date_record_id}
 
-Delete a date record and its child data.
+데이트 기록과 하위 데이터를 삭제합니다.
 
-## 4. Route
+## 4. 경로
 
 ### PUT /date-records/{date_record_id}/route-points
 
-Replace route points for a date record.
+데이트 기록의 경로 좌표를 교체 저장합니다.
 
-Request:
+요청:
 
 ```json
 {
@@ -124,45 +124,45 @@ Request:
 }
 ```
 
-## 5. Places
+## 5. 장소
 
 ### POST /date-records/{date_record_id}/places
 
-Add a visited place.
+방문 장소를 추가합니다.
 
-Request:
+요청:
 
 ```json
 {
-  "name": "Cafe Example",
-  "address": "Seoul Mapo-gu ...",
+  "name": "예시 카페",
+  "address": "서울시 마포구 ...",
   "latitude": 37.5563,
   "longitude": 126.9236,
   "visit_order": 1,
-  "memo": "First stop"
+  "memo": "첫 번째 방문 장소"
 }
 ```
 
 ### PATCH /places/{place_id}
 
-Update place fields.
+장소 정보를 수정합니다.
 
 ### DELETE /places/{place_id}
 
-Delete a place.
+장소를 삭제합니다.
 
-## 6. Photos
+## 6. 사진
 
 ### POST /places/{place_id}/photos
 
-Upload or register a photo for a place.
+장소에 사진을 업로드하거나 사진 메타데이터를 등록합니다.
 
-MVP implementation choice:
+MVP 구현 방식 후보:
 
-- Option A: backend receives multipart upload and stores it.
-- Option B: backend issues a signed upload URL and client uploads directly to storage.
+- 방식 A: 백엔드가 multipart 업로드를 받아 스토리지에 저장.
+- 방식 B: 백엔드가 signed upload URL을 발급하고, 클라이언트가 스토리지에 직접 업로드.
 
 ### DELETE /photos/{photo_id}
 
-Delete photo metadata and storage object.
+사진 메타데이터와 스토리지 객체를 삭제합니다.
 
