@@ -5,7 +5,7 @@ import { colors } from '../constants/theme';
 type AppButtonProps = {
   label: string;
   onPress: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'kakao' | 'outlineLight' | 'danger';
 };
 
 export function AppButton({ label, onPress, variant = 'primary' }: AppButtonProps) {
@@ -19,7 +19,7 @@ export function AppButton({ label, onPress, variant = 'primary' }: AppButtonProp
         pressed && styles.pressed,
       ]}
     >
-      <Text style={[styles.label, variant === 'primary' ? styles.primaryLabel : styles.secondaryLabel]}>
+      <Text style={[styles.label, ['primary', 'danger'].includes(variant) ? styles.primaryLabel : styles.secondaryLabel, variant === 'outlineLight' && styles.lightLabel]}>
         {label}
       </Text>
     </Pressable>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   primary: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primaryDark,
   },
   secondary: {
     backgroundColor: colors.surfaceMuted,
@@ -44,6 +44,19 @@ const styles = StyleSheet.create({
   },
   ghost: {
     backgroundColor: 'transparent',
+  },
+  kakao: {
+    backgroundColor: colors.yellow,
+    borderColor: colors.border,
+    borderWidth: 2,
+  },
+  outlineLight: {
+    backgroundColor: 'rgba(255,255,255,0.18)',
+    borderColor: '#ffffff',
+    borderWidth: 2,
+  },
+  danger: {
+    backgroundColor: colors.routeStrong,
   },
   label: {
     fontSize: 15,
@@ -55,8 +68,10 @@ const styles = StyleSheet.create({
   secondaryLabel: {
     color: colors.text,
   },
+  lightLabel: {
+    color: '#ffffff',
+  },
   pressed: {
     opacity: 0.78,
   },
 });
-

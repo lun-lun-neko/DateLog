@@ -1,75 +1,112 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 import { AppButton } from '../components/AppButton';
-import { Screen } from '../components/Screen';
-import { Section } from '../components/Section';
 import { colors } from '../constants/theme';
 
 type LoginScreenProps = {
-  onLogin: () => void;
+  onKakaoLogin: () => void;
+  onGuestStart: () => void;
 };
 
-export function LoginScreen({ onLogin }: LoginScreenProps) {
+export function LoginScreen({ onKakaoLogin, onGuestStart }: LoginScreenProps) {
   return (
-    <Screen
-      title="DateLog"
-      subtitle="데이트 경로, 장소, 사진, 메모를 한 번에 남기는 커플 기록 앱"
-      footer={<AppButton label="카카오로 시작하기" onPress={onLogin} />}
-    >
-      <View style={styles.heroMap}>
-        <View style={styles.path} />
-        <View style={[styles.marker, styles.markerA]} />
-        <View style={[styles.marker, styles.markerB]} />
+    <View style={styles.screen}>
+      <View style={styles.logoWrap}>
+        <View style={styles.logoCard}>
+          <Text style={styles.logoMark}>♡</Text>
+        </View>
+        <View style={styles.mapBadge}>
+          <Text style={styles.badgeText}>⌖</Text>
+        </View>
       </View>
-      <Section title="MVP 목표">
-        <Text style={styles.body}>오늘의 데이트를 지도 위 경로와 장소 타임라인으로 저장합니다.</Text>
-      </Section>
-    </Screen>
+
+      <View style={styles.copy}>
+        <Text style={styles.title}>데이트 로그</Text>
+        <Text style={styles.subtitle}>우리의 발자국을 지도 위에 기록해요</Text>
+      </View>
+
+      <View style={styles.actions}>
+        <AppButton label="카카오로 시작하기" onPress={onKakaoLogin} variant="kakao" />
+        <AppButton label="로그인 없이 시작하기" onPress={onGuestStart} variant="outlineLight" />
+        <Text style={styles.terms}>시작하면 서비스 이용약관과 개인정보 처리방침에 동의하게 됩니다.</Text>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  heroMap: {
-    aspectRatio: 1.05,
-    backgroundColor: colors.mapBase,
-    borderColor: colors.border,
-    borderRadius: 8,
-    borderWidth: 1,
-    marginTop: 8,
-    overflow: 'hidden',
+  screen: {
+    backgroundColor: colors.primaryDark,
+    flex: 1,
+    justifyContent: 'space-between',
+    padding: 24,
+    paddingBottom: 42,
+    paddingTop: 92,
+  },
+  logoWrap: {
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
     position: 'relative',
   },
-  path: {
-    backgroundColor: colors.primary,
+  logoCard: {
+    alignItems: 'center',
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderRadius: 28,
+    borderWidth: 2,
+    height: 116,
+    justifyContent: 'center',
+    width: 116,
+  },
+  logoMark: {
+    color: colors.primaryDark,
+    fontSize: 62,
+    fontWeight: '900',
+  },
+  mapBadge: {
+    alignItems: 'center',
+    backgroundColor: colors.accentDark,
+    borderColor: colors.surface,
     borderRadius: 999,
-    height: 7,
-    left: '16%',
+    borderWidth: 3,
+    bottom: -8,
+    height: 46,
+    justifyContent: 'center',
     position: 'absolute',
-    top: '52%',
-    transform: [{ rotate: '-28deg' }],
-    width: '72%',
+    right: -12,
+    width: 46,
   },
-  marker: {
-    backgroundColor: colors.primaryDark,
-    borderColor: '#ffffff',
-    borderRadius: 999,
-    borderWidth: 4,
-    height: 28,
-    position: 'absolute',
-    width: 28,
+  badgeText: {
+    color: colors.surface,
+    fontSize: 24,
+    fontWeight: '900',
   },
-  markerA: {
-    left: '18%',
-    top: '54%',
+  copy: {
+    alignItems: 'center',
+    gap: 10,
   },
-  markerB: {
-    right: '17%',
-    top: '32%',
+  title: {
+    color: colors.surface,
+    fontSize: 42,
+    fontWeight: '900',
+    letterSpacing: 0,
   },
-  body: {
-    color: colors.textMuted,
-    fontSize: 15,
-    lineHeight: 22,
+  subtitle: {
+    color: '#ffe9ee',
+    fontSize: 17,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  actions: {
+    gap: 12,
+  },
+  terms: {
+    color: '#ffe9ee',
+    fontSize: 12,
+    lineHeight: 18,
+    paddingHorizontal: 16,
+    textAlign: 'center',
   },
 });
 

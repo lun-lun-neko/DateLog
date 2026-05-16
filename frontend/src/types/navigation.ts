@@ -1,9 +1,3 @@
-export type AppScreen =
-  | 'login'
-  | 'couple-connect'
-  | 'home'
-  | 'new-date-record'
-  | 'date-history'
-  | 'date-detail'
-  | 'settings';
+export type AppFlow = 'landing' | 'tutorial' | 'couple-connect' | 'main';
 
+export type MainTab = 'date' | 'home' | 'calendar' | 'settings';
